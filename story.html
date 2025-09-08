@@ -429,9 +429,22 @@
 
   window.playBgSong = function() {
     if (bgSong.paused) {
-      bgSong.volume = 0.7;
+      bgSong.volume = 0.2;
       bgSong.play();
     }
   };
+
+  // 🔽 Tambahkan ini
+  document.addEventListener("DOMContentLoaded", () => {
+    // ganti '#btnMasuk' dengan ID atau class tombol MASUK kamu
+    const btnMasuk = document.querySelector("#btnMasuk, .MASUK, button");
+    if (btnMasuk) {
+      btnMasuk.addEventListener("click", () => {
+        window.playBgSong();
+      });
+    }
+  });
 </script>
 </html>
+
+
