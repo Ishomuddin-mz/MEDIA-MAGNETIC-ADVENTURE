@@ -422,31 +422,12 @@
 <script src="html5/lib/scripts/bootstrapper.min.js"></script>
 <audio src="musik.mp3" id="bgSong" preload="auto" loop></audio>
 <script>
-  var bgSong = document.getElementById("bgSong");
-  bgSong.pause();
-  bgSong.currentTime = 0;
-
   window.playBgSong = function() {
+    var bgSong = document.getElementById("bgSong");
     if (bgSong.paused) {
-      bgSong.volume = 0.5;
+      bgSong.volume = 0.6;
       bgSong.play();
     }
   };
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const btnMasuk = document.querySelector("button, .masuk, .login, #btnMasuk");
-    if (btnMasuk) {
-      btnMasuk.addEventListener("click", () => {
-        // 🔽 Panggil Script1 (dari user.js)
-        if (typeof Script1 === "function") {
-          Script1();
-        } else {
-          window.playBgSong();
-        }
-      });
-    }
-  });
 </script>
 </html>
-
-
