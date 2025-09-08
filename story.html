@@ -423,7 +423,7 @@
 <audio src="musik.mp3" id="bgSong" preload="auto" loop></audio>
 <script>
   var bgSong = document.getElementById("bgSong");
-  // Pastikan musik tidak jalan otomatis
+  // pastikan musik tidak otomatis jalan
   bgSong.pause();
   bgSong.currentTime = 0;
 
@@ -436,8 +436,8 @@
 
   // 🔽 Tambahkan ini
   document.addEventListener("DOMContentLoaded", () => {
-    // ganti '#btnMasuk' dengan ID atau class tombol MASUK kamu
-    const btnMasuk = document.querySelector("#btnMasuk, .MASUK, button");
+    // coba cari tombol MASUK — biasanya tombol login adalah <button>
+    const btnMasuk = document.querySelector("button, .masuk, .login, #btnMasuk");
     if (btnMasuk) {
       btnMasuk.addEventListener("click", () => {
         window.playBgSong();
@@ -446,5 +446,3 @@
   });
 </script>
 </html>
-
-
