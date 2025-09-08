@@ -423,7 +423,6 @@
 <audio src="musik.mp3" id="bgSong" preload="auto" loop></audio>
 <script>
   var bgSong = document.getElementById("bgSong");
-  // pastikan musik tidak otomatis jalan
   bgSong.pause();
   bgSong.currentTime = 0;
 
@@ -434,15 +433,19 @@
     }
   };
 
-  // 🔽 Tambahkan ini
   document.addEventListener("DOMContentLoaded", () => {
-    // coba cari tombol MASUK — biasanya tombol login adalah <button>
     const btnMasuk = document.querySelector("button, .masuk, .login, #btnMasuk");
     if (btnMasuk) {
       btnMasuk.addEventListener("click", () => {
-        window.playBgSong();
+        // 🔽 Panggil Script1 (dari user.js)
+        if (typeof Script1 === "function") {
+          Script1();
+        } else {
+          window.playBgSong();
+        }
       });
     }
   });
 </script>
 </html>
+
