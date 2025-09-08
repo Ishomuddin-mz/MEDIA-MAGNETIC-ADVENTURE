@@ -422,10 +422,14 @@
 <script src="html5/lib/scripts/bootstrapper.min.js"></script>
 <audio src="musik.mp3" id="bgSong" preload="auto" loop></audio>
 <script>
+  var bgSong = document.getElementById("bgSong");
+  // Pastikan musik tidak jalan otomatis
+  bgSong.pause();
+  bgSong.currentTime = 0;
+
   window.playBgSong = function() {
-    var bgSong = document.getElementById("bgSong");
     if (bgSong.paused) {
-      bgSong.volume = 0.2;
+      bgSong.volume = 0.7;
       bgSong.play();
     }
   };
